@@ -30,6 +30,7 @@ public static class Patterns
     public readonly static string UpperVowels = @"\u1A62\u1A65-\u1A68\u1A6B\u1A73\u1A74";
     public readonly static string UpperVowelsExceptO = @"\u1A62\u1A65-\u1A68\u1A73\u1A74";
     public readonly static string UpperVowelO = @"\u1A6B";
+    public readonly static string UpperVowelI = @"\u1A65";
     public readonly static string UpperMaikang = @"\u1A74";
     public readonly static string LowerVowels = @"\u1A69\u1A6A\u1A6C";
     public readonly static string LowerVowelOa = @"\u1A6C";
