@@ -71,9 +71,4 @@ public static class FixOrder
     public static string Fix(string text) => string.Join("", TextSegment.Split(
         FixExpression.ApplyMultiple(FixTextExpressions, text)
     ).Select(segment => FixExpression.ApplyMultiple(FixSegmentExpressions, segment)));
-
-    private static string FixWater(string segment) => segment.Length == 4 &&
-        segment.Contains(Characters.LetterNa) && segment.Contains(Characters.VowelSignAa)
-        && segment.Contains(Characters.SignMaiKang) && segment.Contains(Characters.SignTone2)
-        ? $"{Characters.LetterNa}{Characters.VowelSignAa}{Characters.SignMaiKang}{Characters.SignTone2}" : segment;
 }

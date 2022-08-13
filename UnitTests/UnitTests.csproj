@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="../TestCases/AmbiguousDescription.csv" CopyToOutputDirectory="PreserveNewest" Link="TestCases/AmbiguousDescription.csv" />
     <Content Include="../TestCases/FixOrder.csv" CopyToOutputDirectory="PreserveNewest" Link="TestCases/FixOrder.csv" />
     <Content Include="../TestCases/PossibleWords.csv" CopyToOutputDirectory="PreserveNewest" Link="TestCases/PossibleWords.csv" />
     <Content Include="../TestCases/TextSegment.csv" CopyToOutputDirectory="PreserveNewest" Link="TestCases/TextSegment.csv" />

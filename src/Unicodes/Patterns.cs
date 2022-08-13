@@ -9,9 +9,11 @@ public static class Patterns
     public readonly static string DefaultLetters = @"\u1A20-\u1A4C";
     public readonly static string DefaultLettersExceptWa = @"\u1A20-\u1A44\u1A46-\u1A4C";
     public readonly static string TallAaLetters = @"\u1A23\u1A34\u1A35\u1A37\u1A45";
+    public readonly static string AfterHaLetters = @"\u1A26\u1A36\u1A3E\u1A3F\u1A43\u1A45";
     public readonly static string LetterWa = @"\u1A45";
     public readonly static string LetterLowYa = @"\u1A3F";
     public readonly static string LetterNa = @"\u1A36";
+    public readonly static string LetterHighHa = @"\u1A49";
     public readonly static string SingleVowelLetters = @"\u1A4D-\u1A52";
     public readonly static string ExtendedLetters = @"\u1A53-\u1A54";
     public readonly static string HoraNumbers = @"\u1A80-\u1A89";
@@ -45,6 +47,7 @@ public static class Patterns
     public readonly static string Tones = @"\u1A75-\u1A79";
     public readonly static string Tone2 = @"\u1A76";
     public readonly static string UpperComponents = @"\u1A58-\u1A5A\u1A7A-\u1A7C";
+    public readonly static string UpperMaisam = @"\u1A7B";
     public readonly static string LowerComponents = @"\u1A56\u1A5B-\u1A5E\u1A7F";
     public readonly static string LeftComponents = @"\u1A55";
     public readonly static string LowerToRightComponents = @"\u1A57";
