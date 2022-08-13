@@ -24,7 +24,7 @@ public class TestPossibleWords
             PossibleWordsGenerator wordsGenerator = new PossibleWordsGenerator(testCase.LexiconWords);
             Assert.Equal(
                 testCase.LexiconOutputs,
-                wordsGenerator.Generate().OrderBy(s => s).ToArray()
+                wordsGenerator.Generate(testCase.Inputs).OrderBy(s => s).ToArray()
             );
         }
     }

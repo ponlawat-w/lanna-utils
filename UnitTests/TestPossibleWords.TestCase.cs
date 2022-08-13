@@ -9,6 +9,11 @@ public class TestPossibleWordsCase
     [Ignore]
     public string[] LexiconWords { get => LexiconWordsRaw.Split('/').Select(x => x.Trim()).Where(x => x != "").ToArray(); }
 
+    [Name("input")]
+    public string InputsRaw { get; set; } = "";
+    [Ignore]
+    public string[] Inputs { get => InputsRaw.Split('/').Select(x => x.Trim()).Where(x => x != "").ToArray(); }
+
     [Name("outputs")]
     public string LexiconOutputsRaw { get; set; } = "";
     [Ignore]
