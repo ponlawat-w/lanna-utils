@@ -8,19 +8,19 @@ public static class AmbiguousDescription
 {
     private readonly static CompoundVowelPattern[] _compoundVowelPatterns = CompoundVowelPattern.GetList("compound");
 
-    private readonly static Regex _initialRegex = new Regex(
+    public readonly static Regex InitialRegex = new Regex(
         $"^((?<special>" + string.Join("|", AmbiguousRepresentation.SpecialValuesDict.Select(x => x.Key)) + "$)?|"
         + $"((?<haCombination>{Patterns.LetterHighHa}{Patterns.Choeng}(?<afterHaLetter>[{Patterns.AfterHaLetters}]))|(?<compoundInitial>(?<compoundMain>[{Patterns.SpatialCharacters}])(?<compoundChoeng>{Patterns.Choeng}(?<compoundChoengLetter>[{Patterns.ChoengableLettersExceptYaWa}]))+)|(?<singleInitial>[{Patterns.SpatialCharacters}]))"
         + $"(?<leftComponent>[{Patterns.LeftComponents}])?(?<lowerComponent>[{Patterns.LowerComponents}{Patterns.LowerToRightComponents}])?(?<maisam>{Patterns.UpperMaisam})?(?<remaining>.*))$"
     );
 
-    private readonly static Regex _vowelRegex = new Regex(
+    public readonly static Regex VowelRegex = new Regex(
         $"^(?<vowel>(?<compound>" + (string.Join("|", _compoundVowelPatterns.Select(x => x.Pattern))) + ")"
         + $"|(?<single>(?<singleToneBefore>[{Patterns.Tones}])?(?<singleVowel>[{Patterns.Vowels}])(?<singleToneAfter>[{Patterns.Tones}])?))?"
         + $"(?<remaining>.*)$"
     );
 
-    private readonly static Regex _finalRegex = new Regex(
+    public readonly static Regex FinalRegex = new Regex(
         $"^(?<any1>.+)?(?<choeng>{Patterns.Choeng}(?<choengLetters>[{Patterns.ChoengableLetters}]))+(?<any2>.+)?$"
     );
 
@@ -30,7 +30,7 @@ public static class AmbiguousDescription
 
     private static string GetInitial(string segment, out string remainingSegment)
     {
-        Match match = _initialRegex.Match(segment);
+        Match match = InitialRegex.Match(segment);
         if (!match.Success)
         {
             remainingSegment = segment;
@@ -77,7 +77,7 @@ public static class AmbiguousDescription
 
     private static string GetVowel(string processedSegment, out string remainingSegment)
     {
-        Match match = _vowelRegex.Match(processedSegment);
+        Match match = VowelRegex.Match(processedSegment);
 
         remainingSegment = match.Groups["remaining"].Success ? match.Groups["remaining"].Value : "";
 
@@ -102,7 +102,7 @@ public static class AmbiguousDescription
 
     private static string GetFinal(string processedSegment)
     {
-        Match match = _finalRegex.Match(processedSegment);
+        Match match = FinalRegex.Match(processedSegment);
 
         StringBuilder stringBuilder = new StringBuilder();
 

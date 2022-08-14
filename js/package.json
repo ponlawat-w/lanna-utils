@@ -1,0 +1,29 @@
+{
+  "name": "lanna-utils",
+  "version": "0.0.0",
+  "description": "Utility functions for processing Lanna language in Taitham script",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "prepare": "dotnet run --project ../cli/ExportForJs ./src/resources",
+    "build": "tsc -p ./tsconfig.default.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ponlawat-w/lanna-utils.git"
+  },
+  "author": "ponlawat-w",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ponlawat-w/lanna-utils/issues"
+  },
+  "homepage": "https://github.com/ponlawat-w/lanna-utils#readme",
+  "devDependencies": {
+    "@types/jest": "^28.1.6",
+    "@types/node": "^18.7.3",
+    "csv": "^6.2.0",
+    "jest": "^28.1.3",
+    "ts-jest": "^28.0.7",
+    "typescript": "^4.7.4"
+  }
+}
