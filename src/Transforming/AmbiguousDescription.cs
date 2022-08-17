@@ -15,7 +15,7 @@ public static class AmbiguousDescription
     );
 
     public readonly static Regex VowelRegex = new Regex(
-        $"^(?<vowel>(?<compound>" + (string.Join("|", _compoundVowelPatterns.Select(x => x.Pattern))) + ")"
+        $"^(?<startTone>[{Patterns.Tones}])?(?<vowel>(?<compound>" + (string.Join("|", _compoundVowelPatterns.Select(x => x.Pattern))) + ")"
         + $"|(?<single>(?<singleToneBefore>[{Patterns.Tones}])?(?<singleVowel>[{Patterns.Vowels}])(?<singleToneAfter>[{Patterns.Tones}])?))?"
         + $"(?<remaining>.*)$"
     );
