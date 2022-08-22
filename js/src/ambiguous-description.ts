@@ -46,18 +46,17 @@ const getInitial = (segment: string): {result: string, remaining: string} => {
 
 const getVowel = (processedSegment: string): {result: string, remaining: string} => {
   const match = new RegExp(vowelRegexPattern, 'gu').exec(processedSegment);
-  if (!match || !match.groups) {
-    return {result: '', remaining: ''};
-  }
 
-  if (match.groups['compound']) {
-    for (const compoundVowelPattern of compoundVowelPatterns) {
-      if (match.groups[compoundVowelPattern.GroupName]) {
-        return {result: compoundVowelPattern.AmbiguousValue, remaining: match.groups['remaining'] ?? ''}
+  if (match && match.groups) {
+    if (match.groups['compound']) {
+      for (const compoundVowelPattern of compoundVowelPatterns) {
+        if (match.groups[compoundVowelPattern.GroupName]) {
+          return {result: compoundVowelPattern.AmbiguousValue, remaining: match.groups['remaining'] ?? ''}
+        }
       }
+    } else if (match.groups['single']) {
+      return {result: getLetterValue(match.groups['singleVowel']), remaining: match.groups['remaining'] ?? ''};
     }
-  } else if (match.groups['single']) {
-    return {result: getLetterValue(match.groups['singleVowel']), remaining: match.groups['remaining'] ?? ''};
   }
 
   return {result: '', remaining: ''};

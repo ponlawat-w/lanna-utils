@@ -15,4 +15,9 @@ describe('Test Ambiguous Description', () => {
       expect(ambiguousDescription(testCase.input)).toEqual(testCase.expected);
     }
   });
+
+  it('should return empty for non-taitham', () => {
+    expect(ambiguousDescription('test')).toBeFalsy();
+    expect(ambiguousDescription(' ')).toBeFalsy();
+  });
 });
