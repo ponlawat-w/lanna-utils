@@ -1,6 +1,6 @@
 {
   "name": "lanna-utils",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Utility functions for processing Lanna language in Taitham script",
   "main": "dist/index.js",
   "files": ["dist"],

@@ -1,7 +1,6 @@
-import fs from 'fs';
-import path from 'path';
 import getAmbiguousDescription from './ambiguous-description';
 import levenshtein from './utils/levenshtein';
+import lexiconData from './resources/lexicon.json';
 
 export class Word {
   public text: string;
@@ -26,9 +25,8 @@ export default class Lexicon {
   public readonly ambiguousDict: {[ambiguousDescription: string]: Word[]};
   public readonly ambiguousList: string[];
 
-  public constructor(filePath?: string) {
-    this.words = fs.readFileSync(filePath ?? path.join(__dirname, 'resources', 'lexicon.txt')).toString()
-      .split('\n').filter(x => x).map(x => new Word(x));
+  public constructor() {
+    this.words = lexiconData.map(x => new Word(x));
 
     this.ambiguousDict = {};
     for (const word of this.words) {
