@@ -1,13 +1,14 @@
 {
   "name": "lanna-utils",
-  "version": "0.3.0",
+  "version": "0.3.4",
   "description": "Utility functions for processing Lanna language in Taitham script",
   "main": "dist/index.js",
   "files": ["dist"],
   "scripts": {
     "test": "jest",
-    "prepare": "dotnet run --project ../cli/ExportForJs ./src/resources && npx ts-node ./src/scripts/lexicon.ts",
-    "build": "tsc -p ./tsconfig.default.json"
+    "fetch-resources": "dotnet run --project ../cli/ExportForJs ./src/resources && npx ts-node ./src/scripts/lexicon.ts",
+    "build": "tsc -p ./tsconfig.default.json",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",

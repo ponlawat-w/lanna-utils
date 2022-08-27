@@ -4,10 +4,8 @@ import Lexicon from './lexicon';
 import Suggestion from './suggest';
 import textSegment from './text-segment';
 
-export default {
-  ambiguousDescription,
-  fixOrder,
-  Lexicon,
-  Suggestion,
-  textSegment
-};
+export { ambiguousDescription };
+export { fixOrder };
+export { Lexicon };
+export { Suggestion };
+export { textSegment };
