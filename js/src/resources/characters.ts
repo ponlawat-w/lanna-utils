@@ -1,4 +1,4 @@
-{
+export default {
   "choengIndicator": "\u1A60",
   "letterHighKa": "\u1A20",
   "letterHighKha": "\u1A21",
@@ -127,4 +127,4 @@
   "signSatkaankuu": "\u1AAB",
   "signHang": "\u1AAC",
   "signCaang": "\u1AAD"
-}
+};

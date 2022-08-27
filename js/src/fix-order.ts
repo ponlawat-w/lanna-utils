@@ -1,5 +1,8 @@
-import { fixTextExpressions, fixSegmentExpressions } from './resources/fix-expressions.json';
+import resources from './resources/fix-expressions';
 import textSegment from './text-segment';
+
+const fixTextExpressions = resources.fixTextExpressions;
+const fixSegmentExpressions = resources.fixSegmentExpressions;
 
 type ExpressionRaw = {pattern: string, replace: string};
 type Expression = {pattern: RegExp, replace: string};

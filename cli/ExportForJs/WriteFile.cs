@@ -4,10 +4,10 @@ public static class WriteFile
     {
         using (TextWriter writer = new StreamWriter(filePath))
         {
-            writer.Write(JsonSerializer.Serialize(value, new JsonSerializerOptions
+            writer.Write("export default " + JsonSerializer.Serialize(value, new JsonSerializerOptions
             {
                 WriteIndented = true
-            }));
+            }) + ';');
         }
     }
 }

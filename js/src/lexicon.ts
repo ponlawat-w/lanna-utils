@@ -1,6 +1,6 @@
 import getAmbiguousDescription from './ambiguous-description';
 import levenshtein from './utils/levenshtein';
-import lexiconData from './resources/lexicon.json';
+import lexiconData from './resources/lexicon-data';
 
 export class Word {
   public text: string;

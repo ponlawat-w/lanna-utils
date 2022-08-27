@@ -1,10 +1,12 @@
-import {
-  initialRegex as initialRegexPattern,
-  vowelRegex as vowelRegexPattern,
-  finalRegex as finalRegexPattern,
-  compoundVowelPatterns, letterValues, specialValues
-} from './resources/ambiguous-description.json';
+import resources from './resources/ambiguous-description';
 import textSegment from './text-segment';
+
+const initialRegexPattern = resources.initialRegex;
+const vowelRegexPattern = resources.vowelRegex;
+const finalRegexPattern = resources.finalRegex;
+const compoundVowelPatterns = resources.compoundVowelPatterns;
+const letterValues = resources.letterValues;
+const specialValues = resources.specialValues;
 
 const getLetterValue = (letter: string): string => (letterValues as any)[letter] ?? '?';
 const getSpecialValue = (letter: string): string => (specialValues as any)[letter] ?? '?';

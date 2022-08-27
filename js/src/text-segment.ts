@@ -1,5 +1,5 @@
-import patterns from './resources/patterns.json';
-import characters from './resources/characters.json';
+import patterns from './resources/patterns';
+import characters from './resources/characters';
 
 const SpatialCharactersRegExp: RegExp = new RegExp(`^[${patterns.spatialCharacters}]$`);
 

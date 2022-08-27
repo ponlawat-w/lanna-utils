@@ -1,4 +1,4 @@
-{
+export default {
   "fixTextExpressions": [
     {
       "name": "FixDanglingChoeng",
@@ -53,4 +53,4 @@
       "replace": "\u1A36\u1A63\u1A74\u1A76"
     }
   ]
-}
+};

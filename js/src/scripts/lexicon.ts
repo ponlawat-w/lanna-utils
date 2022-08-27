@@ -9,7 +9,7 @@ const main = async() => {
   if (response.status !== 200) {
     throw 'Unable to fetch lexicon';
   }
-  fs.writeFileSync('./src/resources/lexicon.json', JSON.stringify(response.data.split('\n').map(x => x.trim()).filter(x => x)));
+  fs.writeFileSync('./src/resources/lexicon-data.ts', 'export default ' + JSON.stringify(response.data.split('\n').map(x => x.trim()).filter(x => x)) + ';');
   console.log('Done');
 };
 

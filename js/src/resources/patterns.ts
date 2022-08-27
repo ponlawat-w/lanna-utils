@@ -1,4 +1,4 @@
-{
+export default {
   "taiThamLanna": "\\u1A20-\\u1AAF",
   "choeng": "\\u1A60",
   "defaultLetters": "\\u1A20-\\u1A4C",
@@ -51,4 +51,4 @@
   "rightCharacters": "\\u1A61\\u1A63\\u1A64",
   "lowerToRightCharacters": "\\u1A57\\u1A6D",
   "nonSpatialCharacters": "\\u1A55-\\u1A5E\\u1A61-\\u1A7C\\u1A7F"
-}
+};
