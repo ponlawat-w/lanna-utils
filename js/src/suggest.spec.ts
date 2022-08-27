@@ -1,3 +1,4 @@
+import Lexicon from './lexicon';
 import Suggestion, { SuggestionResult } from './suggest';
 import { readCsv } from './tests/io';
 
@@ -8,7 +9,8 @@ type TestCase = {
 };
 
 describe('Text Suggestions', () => {
-  const suggestion: Suggestion = new Suggestion();
+  const lexicon: Lexicon = new Lexicon;
+  const suggestion: Suggestion = new Suggestion(lexicon);
   let testCases: TestCase[];
 
   beforeAll(async() => {

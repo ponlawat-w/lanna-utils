@@ -76,8 +76,8 @@ export default class Suggestion {
   public ambiguousLengthTolerance: number = 3;
   public levenshteinFractionTolerance: number = 0.5;
 
-  public constructor() {
-    this.lexicon = new Lexicon();
+  public constructor(lexicon: Lexicon) {
+    this.lexicon = lexicon;
   }
 
   public suggest(text: string): SuggestionResult[] {
