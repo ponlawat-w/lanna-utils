@@ -6,9 +6,10 @@ public static class AmbiguousRepresentation
 {
     public readonly static IDictionary<string, string> SpecialValuesDict = new Dictionary<string, string>
     {
+        { "ᨣᩝᩴ᩵", "koaboa" },
         { "ᨷᩴ᩵", "boa" },
+        { "ᩓ᩠ᩅ", "laew" },
         { "ᩐᩣ", "ʔao" },
-        { "ᩓ᩠ᩅ", "laew" }
     };
 
     public readonly static IDictionary<string, string> LetterValuesDict = new Dictionary<string, string>
