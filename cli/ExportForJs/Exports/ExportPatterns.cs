@@ -9,6 +9,8 @@ public static class ExportPatterns
                 f => (string?)(f.GetValue(null) ?? null)
             );
         
+        value["segmentExplanation"] = SegmentExplanation.Pattern;
+        
         WriteFile.Write(filePath, value);
     }
 }
